@@ -13,18 +13,26 @@
     // to get the value of an input: document.getElementById("element-id").value
 
     document.getElementById("addition").addEventListener("click", function() {
-        // perform an addition
+        let num1 = Number(document.getElementById("op-one").value);
+        let num2 = Number(document.getElementById("op-two").value);
+        alert("Le résultat est " + (num1+num2));
     });
 
     document.getElementById("substraction").addEventListener("click", function() {
-        // perform an substraction
+        let num1 = Number(document.getElementById("op-one").value);
+        let num2 = Number(document.getElementById("op-two").value);
+        alert("Le résultat est " + (num1-num2));
     });
 
     document.getElementById("multiplication").addEventListener("click", function() {
-        // perform an multiplication
+        let num1 = Number(document.getElementById("op-one").value);
+        let num2 = Number(document.getElementById("op-two").value);
+        alert("Le résultat est " + (num1*num2));
     });
 
     document.getElementById("division").addEventListener("click", function() {
-        // perform an division
+        let num1 = Number(document.getElementById("op-one").value);
+        let num2 = Number(document.getElementById("op-two").value);
+        alert("Le résultat est " + (num1/num2));
     });
 })();
