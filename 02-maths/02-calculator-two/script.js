@@ -9,15 +9,35 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+(() => {
+    // to get the value of an input: document.getElementById("element-id").value
 
+    const performOperation = operation => {
+        var num1 = Number(document.getElementById("op-one").value);
+        var num2 = Number(document.getElementById("op-two").value);
+        // perform the operation
+        switch(operation){
+            case "addition":
+                alert("result is " + (num1+num2)+".");
+                break;
+            case "substraction":
+                alert("result is " + (num1-num2)+".");
+                break;
+            case "multiplication":
+                alert("result is " + (num1*num2)+".");
+                break;
+            case "division":
+                alert("result is " + (num1/num2)+".");
+                break;
+            default:
+                alert("Not a valid operator");
+        }
+    };
 
-function test() {
-    document.getElementById("addition").addEventListernet("click");
-    alert("Yop");
-
-    // return true;
-}
-
-// (function() {
-//     return true;
-// })();
+    Array.from(document.querySelectorAll("button.operator")).forEach($btn =>
+        $btn.addEventListener(
+            "click",
+            () => (performOperation($btn.id), false),
+        ),
+    );
+})();

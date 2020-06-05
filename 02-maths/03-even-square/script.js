@@ -12,9 +12,11 @@
 (function() {
 
     document.getElementById("run").addEventListener("click", function() {
-
-        // your code here
-
+        let result =[];
+        for (let startnum = 1; startnum <= 21; startnum++){
+            result.push(startnum*startnum);
+        };
+        alert(result);
     });
 
 })();
