@@ -11,6 +11,22 @@
 
 (function() {
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        
+        function getRandomInt(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        setInterval(funcion () {
+
+            var red = getRandomInt(0, 255);
+            var green = getRandomInt(0, 255);
+            var blue = getRandomInt(0, 255);
+        
+        document.querySelector("body").style.backgroundColor="rgb(" + red + "," + green + "," + blue + ")";
+        
+        }, onclick);
+
+    });
 
 })();

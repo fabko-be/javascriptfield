@@ -13,4 +13,20 @@
 
     // your code here
 
+    document.getElementById("red").addEventListener("click", ()=> {
+        document.querySelector("body").style.backgroundColor = "red";
+    });
+
+    document.getElementById("green").addEventListener("click", ()=> {
+        document.querySelector("body").style.backgroundColor = "green";
+    });
+
+    document.getElementById("yellow").addEventListener("click", ()=> {
+        document.querySelector("body").style.backgroundColor = "yellow";
+    });
+
+    document.getElementById("blue").addEventListener("click", ()=> {
+        document.querySelector("body").style.backgroundColor = "blue";
+    });
+
 })();
