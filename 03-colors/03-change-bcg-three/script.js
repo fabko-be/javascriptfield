@@ -11,22 +11,24 @@
 
 (function() {
 
-    document.getElementById("run").addEventListener("click", () => {
-        
-        function getRandomInt(min, max){
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+        document.getElementById("run").addEventListener("click", () => {
+        //Fonction permettant d'obtenir un entier entre min et max
+        function getRandomInt(min, max) {
+        //min = ceil -> Arrondi vers le bas donc 0 possible
+        //max = floor -> Arrondi vers le haut donc 255 possible
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        //Retourne un entier entre min (inclus) et max (inclus)...
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
 
-        setInterval(funcion () {
+        };
+        // Lacement de la fonction pour chaque variable en introduisant les min / max voulu
+        var red = getRandomInt(0,255);
+        var green = getRandomInt(0,255);
+        var blue = getRandomInt(0,255);
+        // Récupération des variables pour les envoyer vers le backgroundColor du body
+        document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 
-            var red = getRandomInt(0, 255);
-            var green = getRandomInt(0, 255);
-            var blue = getRandomInt(0, 255);
-        
-        document.querySelector("body").style.backgroundColor="rgb(" + red + "," + green + "," + blue + ")";
-        
-        }, onclick);
-
-    });
+});
 
 })();

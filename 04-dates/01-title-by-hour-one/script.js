@@ -11,7 +11,21 @@
 
 (function() {
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
+    var time = new Date();
+    //new Date() heure courante dans le fuseau horaire local.
+    //format LetterDay LetterMonth DayNumber Year Current Time (Hour / Minutes / secondes) and Current Time Zone
+    var hours = time.getHours();
+    var msg;
+    if(hours < 18){
+        msg = "Hello";
+    } else {
+        msg = "Good evening";
+    };
+
+    document.getElementById("target").innerHTML = msg;
+
+
+    // to change the content of a tag: document.getElementById("target").innerHTML = "new-value"
 
     // your code here
 
