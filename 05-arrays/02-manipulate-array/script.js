@@ -24,6 +24,19 @@
         "cerise",
     ];
 
+    document.getElementById("run").addEventListener("click", () => {
+
+        fruits.pop();
+        // Supprime le dernier élément
+        fruits.shift();
+        // Supprime le premier élément
+        fruits.push("kiwi");
+        // Ajoute kiwi à la fin de l'array
+        fruits.unshift("banana")
+        // Ajoute Banana au début de l'array
+        alert(fruits);
+        
+    })
     // your code here
 
 })();
