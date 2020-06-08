@@ -11,8 +11,12 @@
 
 (function() {
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
-
-    // your code here
+    // Récupération de la date du jour dans la variable d
+    var d = new Date();
+    // Mise en place des array pour les mois et les jours
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var days = ["Sunday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    //Affichage des éléments vers l'id Target de la page HTML en se servant des array.
+    document.getElementById("target").innerHTML = days[d.getDay()] + " " + d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear() + ", " + d.getHours() + "h" + d.getMinutes() + ".";
 
 })();
