@@ -25,7 +25,10 @@
         "grap",
         "cherry",
     ];
-
-    // your code here
+    // Array always start by index 0 !!! So the 4th items is the item#3
+    document.getElementById("run").addEventListener("click", function() {
+        alert(fruits[3]);
+    });
+    
 
 })();
