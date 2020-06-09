@@ -88,7 +88,18 @@
             age: 81,
         },
     ];
-
-    // your code here
-
+    document.getElementById("run").addEventListener("click", () => {
+        // function filtre(people){
+        //     return people.filter(people.age >= 18);
+        // }
+        let major = [];
+        
+        people.forEach((element) => {
+        if(element.age >= 18){
+            major.push(element.firstname + " " + element.lastname + " " + element.age)
+        }
+        });
+        
+        alert(major.join("\n"));
+    });
 })();

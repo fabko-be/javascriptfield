@@ -88,7 +88,14 @@
             email: "gkeatche@google.fr",
         },
     ];
+        document.getElementById("run").addEventListener("click", () => {
 
-    // your code here
+            // Fonction pour rechercher Jean dans l'array
+            function jean(people){
+                return people.firstname === "Jean";
+            }
+            // Alert sur l'email et l'index
+            alert(people.find(jean).email + " et l'index est " + people.findIndex(jean));
 
-})();
+        });
+    })();
