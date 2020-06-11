@@ -12,5 +12,18 @@
 (() => {
     const keys = ["name", "species", "age", "gender", "color"];
     const values = ["Skitty", "cat", 9, "female", "tabby"];
-    // your code here
+    
+    document.getElementById("run").addEventListener("click", () => {
+
+        // Création d'un array depuis l'array Keys, en y intégrant les valeurs de keys et de values, 
+
+        let objArr = keys.map(function (element, i) {
+            return [keys[i], values[i]];
+        });
+
+        // Création de l'object depuis l'array objArr
+        
+            let obj = Object.fromEntries(objArr);
+            console.log(obj);
+    })
 })();

@@ -26,5 +26,14 @@
         os: "linux",
         user: null,
     };
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+        
+        // Pour chaque entrée dans l'objet computers, tester si les valeurs sont définies ou non, si non, alors ajouter les valeurs depuis defaultProps.
+        computers.forEach((i) => {
+            i.available !== undefined || (i.available = defaultProps.available);
+            i.user !== undefined || (i.user = defaultProps.user);
+            i.os !== undefined || (i.os = defaultProps.os);
+        });
+        console.log(computers);
+    });
 })();

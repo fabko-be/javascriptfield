@@ -29,6 +29,8 @@
         fruits.delete("cherry");
         fruits.add("banana").add("kiwi");
         console.log(fruits);
+        var newFruits = Array.from(fruits);
+        alert(newFruits.join(",\n"));
         
     })
 })();
