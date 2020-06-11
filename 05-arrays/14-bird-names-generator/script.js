@@ -39,38 +39,28 @@
     ]);
 
     document.getElementById("run").addEventListener("click", () => {
-
+        // Création d'un array depuis le Set Adjectives
         var adj = Array.from(adjectives);
-
+        // Fonction pour généré un entier aléation entre min et max (inclus tous les deux)
         function getRandomInt(min, max){
             min = Math.ceil(min);
             max = Math.floor(max);
             return number = Math.floor(Math.random() * (max - min + 1)) + min ;
         }
-
-
+        // Variable pour généré un numéro d'index Max
         maxNb = birds.length -1;
         maxNbAdj = adj.length -1;
+        // Variable stockant l'oiseau choisi au hasard
         femBirds = birds[getRandomInt(0, maxNb)];
+        // Variable stockant l'adjectif choisi au hasard
         aleAdj = adj[getRandomInt(0 , maxNbAdj)];
-
-        console.log(femBirds.fem);
-        console.log(aleAdj);
-
+        // Si femBirds.fem à un champ fem alors afficher l'oiseau suivi de l'adjectif au féminin
         if(femBirds.fem == true){
-            console.log ("La " + birds[femBirds] + " " + aleAdj + "e.");
+            console.log ("La " + femBirds.fem + " " + aleAdj + "e.");
+        // Sinon afficher le nom de l'oiseau choisi sui de l'adjectif au masculin
         } else {
-            console.log ("Ho nooooo !");
+            console.log ("Le " + femBirds.name + " " + aleAdj + ".");
         }
 
     });
-
-        // if (birds[femBirds].fem !== undefined){
-        //         console.log(birds[femBirds] + " " + aleAdj +"e.");
-        //     } else {
-        //         console.log(birds[femBirds] + " " + aleAdj)
-        //     }
-        // });
-        // console.log(birds[getRandomInt(0 , maxNb)]);
-        // console.log(adj[getRandomInt(0 , maxNbAdj)]);
 })();
