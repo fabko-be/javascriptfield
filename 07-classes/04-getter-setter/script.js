@@ -10,5 +10,28 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    // Construction de la classe personne
+    class person {
+        constructor(firstname, lastname){
+            this.firstname = firstname;
+            this.lastname = lastname;
+        }
+    // method get name, qui sera utilisé pour l'accès aux données de l'objet name
+    get name(){
+        return `${this.firstname} ${this.lastname}`;
+    }
+    // method set name, qui sera utilisée pour la modification de l'objet name
+    set name(nomComplet){
+        let splName = nomComplet.split(" ");
+        this.firstname = splName[0];
+        this.lastname =  splName[1];
+    }
+}
+
+document.getElementById("run").addEventListener("click", () => {
+    let me = new person ("Fabian", "Quoidbach");
+    console.log (me.name);
+    me.name = "Truc Much";
+    console.log (me.name);
+})
 })();

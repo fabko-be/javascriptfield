@@ -14,7 +14,17 @@
         constructor(name, age) {
             this.name = name;
             this.age = age;
-        }
-    }
-    // your code here
+        };
+    };
+
+    document.getElementById("run").addEventListener("click", () => {
+    
+        // Création des deux nouveaux chats
+    let cat1 = new Cat("Skitty", "9 years");
+    let cat2 = new Cat("Pixel", "6 years");
+        // Affiche les 2 chats l'un à la suite de l'autre
+    console.log(cat1);
+    console.log(cat2);
+    
+});
 })();
