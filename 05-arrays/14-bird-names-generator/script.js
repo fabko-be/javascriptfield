@@ -38,5 +38,39 @@
         "arboré",
     ]);
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        var adj = Array.from(adjectives);
+
+        function getRandomInt(min, max){
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return number = Math.floor(Math.random() * (max - min + 1)) + min ;
+        }
+
+
+        maxNb = birds.length -1;
+        maxNbAdj = adj.length -1;
+        femBirds = birds[getRandomInt(0, maxNb)];
+        aleAdj = adj[getRandomInt(0 , maxNbAdj)];
+
+        console.log(femBirds.fem);
+        console.log(aleAdj);
+
+        if(femBirds.fem == true){
+            console.log ("La " + birds[femBirds] + " " + aleAdj + "e.");
+        } else {
+            console.log ("Ho nooooo !");
+        }
+
+    });
+
+        // if (birds[femBirds].fem !== undefined){
+        //         console.log(birds[femBirds] + " " + aleAdj +"e.");
+        //     } else {
+        //         console.log(birds[femBirds] + " " + aleAdj)
+        //     }
+        // });
+        // console.log(birds[getRandomInt(0 , maxNb)]);
+        // console.log(adj[getRandomInt(0 , maxNbAdj)]);
 })();

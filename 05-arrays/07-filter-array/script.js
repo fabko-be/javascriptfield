@@ -89,17 +89,17 @@
         },
     ];
     document.getElementById("run").addEventListener("click", () => {
-        // function filtre(people){
-        //     return people.filter(people.age >= 18);
-        // }
-        let major = [];
-        
-        people.forEach((element) => {
-        if(element.age >= 18){
-            major.push(element.firstname + " " + element.lastname + " " + element.age)
-        }
+    // Création de l'array Major en clonan l'array people en applicant un filtre sur l'âge
+        let major  = people
+            .filter(item => item.age >= 18);
+    // Renvoie l'array Major dans la console
+        console.log(major);
+    // Pour aller plus loin, création d'un array secondaire dans lequel on push tous les objets de l'array précédent dans une chaine de caractère
+        let alertMajor = [];
+        major.forEach((test) => {
+            alertMajor.push(test.firstname + " " + test.lastname + " " + test.age);
         });
-        
-        alert(major.join("\n"));
+    // Renvoie chaque entrée sur une ligne différente de l'array secondaire
+        alert(alertMajor.join(", \n"));
     });
 })();

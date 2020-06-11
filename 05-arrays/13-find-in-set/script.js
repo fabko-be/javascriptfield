@@ -22,5 +22,18 @@
         "Lucas",
     ]);
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        let ppl = 0;
+        let alex = " Mais alexandre n'existe pas !";
+
+        people.forEach((item) => {
+            ppl += 1;
+            if(item == "Alexandre"){
+                alex = " De plus Alexandre existe !"
+            }
+        })
+
+        console.log("il y a " + ppl + "." + alex);
+    })
 })();

@@ -28,6 +28,10 @@
         "cerise",
     ];
 
-    // your code here
+    document.getElementById("run").addEventListener("click",() => {
+
+        // Application d'un filtre travaillant sur l'item et l'index. Return true si IndexOf(Item) = index du premier item avec ce nom
+        console.log(fruits.filter((item, index) => fruits.indexOf(item) === index));
+    })
 
 })();

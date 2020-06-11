@@ -89,6 +89,9 @@
         },
     ];
 
-    // your code here
+    document.getElementById("run").addEventListener("click",function(){
+        // people.reduce pour traiter chaque valeur de la gauche vers la droite. Appelle la fonction accumulotar sur la valeur de l'entrée age, en démarrer de l'index 0
+        console.log(people.reduce((accumulator, currentValue) => accumulator + currentValue.age, 0));
+    });
 
 })();

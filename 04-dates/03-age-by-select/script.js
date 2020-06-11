@@ -13,6 +13,21 @@
 
     document.getElementById("run").addEventListener("click", () => {
         
+
+        // Principe :
+        // récupération de la date du jour
+        // récupération sous type de caractère des jours et mois entrés
+        // récupération de l'année entrée type nombre
+        // Création de la variable age = année en cours - année entrée
+
+        // Récupération du jour et du mois actuel sous forme de chaine de caractère (Ajout de +1 pour le mois car Janvier = 0)
+        // 4 boucles IF, si mois ou année entrée ou actuelle font moins de 2 caractères, ajouter 0 devant (Pas certains de la nécéssité pour les mois -_-')
+        // bdCalc = Concatainage du mois et de l'année entrée + conversion en nombre
+        // todayCalc = concatainage du mois et de l'année actuelle + conversion en nombre
+        // Si bdCalc - TodayCalc (exemple  0310 (10 mars) - 0610 (10 Juin) est plus petit ou = a 0 alors afficher Age)
+        // Sinon afficher Age - 1
+
+
         //récupération de la date du jour + 3 entrées de la feuille
         var today = new Date();
         var dobDay = String(document.getElementById("dob-day").value);
@@ -20,8 +35,6 @@
         var dobYear = document.getElementById("dob-year").value;
         //Calcul de l'âge en faisant Année actuelle - Année entrée
         var age = Number(today.getFullYear()) - Number(dobYear);
-    
-        // alert(age);
     
         //création de 2 variable récupérant les jours et mois actuels sous forme de chaine de catactère
         var todayDay = String(today.getDate());
