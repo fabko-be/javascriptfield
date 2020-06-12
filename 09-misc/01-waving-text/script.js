@@ -18,6 +18,8 @@
     let sizeArr = [12, 16, 20, 24, 28, 24, 20, 16];
     let outputArr = [];
 
+    
+    
     document.getElementById("target").innerHTML="";
 
     chars.forEach((element) => {
