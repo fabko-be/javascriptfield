@@ -11,6 +11,12 @@
 
 (function() {
 
-    // your code here
+    var table = "<table>"
 
+    for(let i = 1 ; i <= 10 ; i++){
+        table += "<tr><td> ligne " + i + " </td></tr>"
+    };
+    table += "</table>"
+
+    document.getElementById("target").innerHTML = table;
 })();

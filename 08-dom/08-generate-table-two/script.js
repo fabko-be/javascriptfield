@@ -11,6 +11,18 @@
 
 (function() {
 
-    // your code here
+    let table = "<table>"
+    let x = 1
 
+        for (let i = 1 ; i <= 10 ; i++){
+        table += "<tr>";
+        
+            for (x = 1 ; x <= 10 ; x ++){
+                table += "<td>" + x * i + "</td>"
+            }
+        
+        table += "</tr>"
+        }
+    table += "</table>"
+    document.getElementById("target").innerHTML = table;
 })();

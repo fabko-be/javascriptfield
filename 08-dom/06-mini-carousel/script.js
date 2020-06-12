@@ -18,7 +18,16 @@
         "../../_shared/img/lemon.svg",
         "../../_shared/img/map.svg",
     ];
+    
+    let clic = 0
+    
+    document.getElementById("next").addEventListener("click", ()=> {
+        clic ++
 
-    // your code here
+        if (clic == gallery.length){
+            clic -= gallery.length;
+        }
+            document.querySelector("img").src = gallery[clic];
+    })
 
 })();
