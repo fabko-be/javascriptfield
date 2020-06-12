@@ -15,18 +15,19 @@
             return `${this.constructor.greeting}! I'm ${this.name}!`;
         }
     }
+
     class cat extends Animal {
         constructor (name) {
             super();
             this.name = name;
-            this.constructor.greeting = "Miaou houman !";
+            this.constructor.greeting = "Miaau !"
         }
     }
     class dog extends Animal {
         constructor (name) {
             super();
-            this.name = name
-            this.constructor.greeting = "waaaaouaaf";
+            this.name = name;
+            this.constructor.greeting = "waaaaaooaaaaaf !"
         }
     }
 

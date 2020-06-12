@@ -11,6 +11,27 @@
 
 (function() {
 
-    // your code here
+    let lgt;
+    let max = 8;
+    let counterJs;
+    let exp = /^(?=.*[A-Za-z])(?=.*\d*\d)[A-Za-z\d]{8}$/gi;
+    
+  
+    document.getElementById("pass-one").maxLength = 8;
+
+
+    document.getElementById("pass-one").addEventListener("keyup", ()=> {
+        
+        let passone = document.getElementById("pass-one").value;
+        lgt = passone.length;
+        counterJs = lgt+"/"+max;
+        let test = passone.match(exp)
+        console.log(test);
+        if(test !== null){
+        document.getElementById("validity").innerHTML = "ok";
+        } else {
+            document.getElementById("validity").innerHTML = "Not ok";
+        };
+    });
 
 })();

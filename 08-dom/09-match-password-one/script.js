@@ -11,6 +11,21 @@
 
 (function() {
 
-    // your code here
+    document.getElementById("run").addEventListener("click", () => {
+
+        // Cible les deux éléments à tester
+        let x = document.getElementById("pass-one")
+        let y = document.getElementById("pass-two")
+
+    
+        // Si la valeur de x est EXACTEMENT la même que y, alors envoyer le message
+        if(x.value === y.value){
+            console.log("Passwords matches !")
+            // Sinon changer la couleur des bordures en rouge
+        } else {
+            x.style.borderColor = "red";
+            y.style.borderColor = "red";
+        }
+    });
 
 })();

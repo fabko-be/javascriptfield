@@ -10,7 +10,21 @@
 // You will have time to focus on it later.
 
 (function() {
+            
+        let lgt;
+        let max = 10;
+        let counterJs;
+        document.getElementById("pass-one").maxLength = 10;
 
-    // your code here
+
+        document.getElementById("pass-one").addEventListener("keyup", ()=> {
+            
+            let passone = document.getElementById("pass-one").value;
+            lgt = passone.length;
+            counterJs = lgt+"/"+max;
+            document.getElementById("counter").innerHTML = counterJs;
+
+        
+        });
 
 })();
