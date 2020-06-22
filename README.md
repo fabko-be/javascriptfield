@@ -33,11 +33,25 @@ Then, use your terminal to *navigate* to your repo and run the following command
 
 If everything ir right, your default's browser will be opened on the address [localhost:8000](https://localhost:8000).
 
+## Specifics instructions
+
+### Section 11 - fetch
+
+Pour les exercices concernant fetch, vous allez avoir besoin d'interroger une API REST.
+Nous vous avons prévu un petit script pour faire tourner cette API en local.
+
+Ouvrez un second terminal, puis _naviguez_ jusqu'au dossier du repo. Ensuite, lancez les commandes suivantes :
+
+    npm run api
+
+À partir de là, vous aurez une API REST disponible à l'adresse `http://localhost:3000`
+
 
 ## Resources
 
 To get the most out of these exercises, some useful resources:
 
+- [Code Academy](https://www.codecademy.com/learn/introduction-to-javascript)
 - [Silent Teacher](http://silentteacher.toxicode.fr/) - learn and have fun
 - [Solo Learn - Javascript](https://www.sololearn.com/Course/JavaScript/) :uk:
 - [Sabe - Javascript](https://sabe.io/classes/javascript) :uk:

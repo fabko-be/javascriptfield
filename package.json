@@ -9,5 +9,7 @@
   "dependencies": {
     "json-server": "^0.16.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "seve": "^0.10.0"
+  }
 }
