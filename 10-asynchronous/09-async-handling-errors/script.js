@@ -17,17 +17,13 @@
             console.table (await window.lib.getPersons());
         } 
         catch (e) {
-            console.log("Error ", e.message);
+            console.log(e.message);
         }
     };
 
     document.getElementById("run").addEventListener("click",() => {
 
-
         check();
-        // window.lib.getPersons()
-        // .catch(console.log("Error"))
-        // .then(() => console.log())
 
     });
 
