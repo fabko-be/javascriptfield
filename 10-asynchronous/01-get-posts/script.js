@@ -10,5 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    function callbackTest(error, articlesArr){
+        if(error === null){
+            console.table(articlesArr);
+        } else {
+            console.log("WTF");
+        }
+    }
+    document.getElementById("run").addEventListener("click",() => {
+
+        window.lib.getPosts(callbackTest);
+        
+    })
+
 })();

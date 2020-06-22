@@ -10,5 +10,30 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click",() => {
+
+        const promPost = window.lib.getPosts();
+        
+            promPost.then((result) => {
+                
+                result.forEach(element => {
+
+                    const promCom = window.lib.getComments(element.id)
+                    
+                        element.comments = promCom;
+                        return promCom;
+                    
+                });
+
+                console.table(result);
+
+            });
+
+            promPost.catch((error)=>{
+
+                console.log(error);
+
+            });
+
+        });
 })();

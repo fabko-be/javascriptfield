@@ -10,5 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click",() => {
+
+        const prom1 = window.lib.getPosts()
+
+        prom1.then((result)=>{
+            console.table(result);
+        })
+
+        prom1.catch((error)=>{
+            console.log(error);
+
+        })
+        
+    })
 })();

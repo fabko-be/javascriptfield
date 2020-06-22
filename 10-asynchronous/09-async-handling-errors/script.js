@@ -10,5 +10,25 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    async function check(){
+        
+        try {
+            console.table (await window.lib.getPersons());
+        } 
+        catch (e) {
+            console.log("Error ", e.message);
+        }
+    };
+
+    document.getElementById("run").addEventListener("click",() => {
+
+
+        check();
+        // window.lib.getPersons()
+        // .catch(console.log("Error"))
+        // .then(() => console.log())
+
+    });
+
 })();

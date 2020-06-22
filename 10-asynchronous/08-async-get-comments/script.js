@@ -10,5 +10,22 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+        async function construcArr() {
+
+            let articlArr = await window.lib.getPosts();
+
+            for (let article of articlArr){
+                article.comment = await window.lib.getComments(article.id);
+            }
+
+            console.table(articlArr);
+
+        }
+
+        document.getElementById("run").addEventListener("click",() => {
+
+            construcArr();
+        });
+
 })();

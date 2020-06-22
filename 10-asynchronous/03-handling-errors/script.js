@@ -10,5 +10,22 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    
+    function callbackTest(error, peopleArr){
+
+        if(error != null){
+            console.log("WTF !");
+        } else {
+            console.table(peopleArr);
+        }
+
+    }
+
+    document.getElementById("run").addEventListener("click",() => {
+
+        window.lib.getPersons(callbackTest);
+
+    })
+
+ 
 })();
