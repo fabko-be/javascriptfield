@@ -28,7 +28,7 @@
 
     document.getElementById("run").addEventListener("click", () => {
         // La fonction forEach permet d'exécuter une fonction sur chaque élément du tableau.
-    fruits.forEach(element => alert(element));
+    fruits.forEach(element => console.log(element));
 
 });
 

@@ -31,7 +31,7 @@
         // Début de l'index de l'array étant a 0, i = 0 et fin de l'index = length-1 (donc pas de = dans la boucle comme ça elle s'arrête au moment voulu).
         // Afficher l'élément dont l'index est égal à i tant que tous les index ne sont pas passés.
         for(i=0 ; i < fruits.length ; i++){
-            alert(fruits[i]);
+            console.log(fruits[i]);
         }
     });
 

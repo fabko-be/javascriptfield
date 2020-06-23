@@ -11,9 +11,7 @@
 
 (function() {
 
-    let x = document.getElementById("source");
-    let y = x.getAttribute("data-image");
-
+    let x = document.getElementById("source").getAttribute("data-image");
     document.getElementById("source").remove();
-    document.getElementById("target").innerHTML = "<img src='"+y+"'>";
+    document.getElementById("target").innerHTML = "<img src='"+x+"'>";
 })();

@@ -91,11 +91,11 @@
         document.getElementById("run").addEventListener("click", () => {
 
             // Fonction pour rechercher Jean dans l'array
-            function jean(people){
-                return people.firstname === "Jean";
+            function search(people){
+                return people.firstname === "Jean" && people.lastname === "Dupont";
             }
-            // Alert sur l'email et l'index
-            alert(people.find(jean).email + " et l'index est " + people.findIndex(jean));
+            // console log sur l'email et l'index
+            console.log(people.find(search).email + " et l'index est " + people.findIndex(jean));
 
         });
     })();

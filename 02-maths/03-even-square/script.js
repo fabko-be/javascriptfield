@@ -16,7 +16,7 @@
         for (let startnum = 1; startnum <= 21; startnum++){
             result.push(startnum*startnum);
         };
-        alert(result);
+        console.table(result);
     });
 
 })();

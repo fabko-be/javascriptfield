@@ -44,7 +44,7 @@
         // Pour toutes les entrée de l'array people -> Exécuter la fonction test
         people.forEach((test) => {
             // Alert sur toutes les entrées de l'array et affichage des firstname et lastname
-            alert(test.firstname + " " + test.lastname);
+            console.log(test.firstname + " " + test.lastname);
         });
     });
 

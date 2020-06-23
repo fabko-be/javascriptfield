@@ -15,10 +15,15 @@
     // Récupération de la valeur entrée dans la variable num    
     let num = Number(document.getElementById("number").value);
     // Création d'un array pour la variable num
+    if(num == 0 || num < 0){
+        alert("Factoriel de 0 est 1, pas de factoriel pour les nombres négatifs");
+    } else {
     let tabArr = [num];
     // Boucle while qui push la variable minus dans l'array créé,
     // La variable minus = num-1 tant que num est plus grand que 1
     // pour 4, la boucle intégrera donc 4 (Sa valeur initiale) puis 3 2 et 1
+    
+    
 
     while (num>1){
         let minus = num-1;
@@ -35,7 +40,7 @@
         final = (final + result);
     }
     alert(final);
-
+}
 });
 
 

@@ -17,7 +17,7 @@
 
         // Création d'un array depuis l'array Keys, en y intégrant les valeurs de keys et de values, 
 
-        let objArr = keys.map(function (element, i) {
+        let objArr = keys.map(function (_, i) {
             return [keys[i], values[i]];
         });
 

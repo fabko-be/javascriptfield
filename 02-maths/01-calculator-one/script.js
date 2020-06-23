@@ -11,28 +11,22 @@
 
 (function() {
     // to get the value of an input: document.getElementById("element-id").value
-
+    let num1 = Number(document.getElementById("op-one").value);
+    let num2 = Number(document.getElementById("op-two").value);
+    
     document.getElementById("addition").addEventListener("click", function() {
-        let num1 = Number(document.getElementById("op-one").value);
-        let num2 = Number(document.getElementById("op-two").value);
         alert("Le résultat est " + (num1+num2));
     });
 
     document.getElementById("substraction").addEventListener("click", function() {
-        let num1 = Number(document.getElementById("op-one").value);
-        let num2 = Number(document.getElementById("op-two").value);
         alert("Le résultat est " + (num1-num2));
     });
 
     document.getElementById("multiplication").addEventListener("click", function() {
-        let num1 = Number(document.getElementById("op-one").value);
-        let num2 = Number(document.getElementById("op-two").value);
         alert("Le résultat est " + (num1*num2));
     });
 
     document.getElementById("division").addEventListener("click", function() {
-        let num1 = Number(document.getElementById("op-one").value);
-        let num2 = Number(document.getElementById("op-two").value);
         alert("Le résultat est " + (num1/num2));
     });
 })();

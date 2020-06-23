@@ -10,5 +10,28 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    
+    async function xmensRecup(){
+        
+        let response = await fetch("http://localhost:3000/heroes");
+        xmen = await response.json();
+
+        idXmen = document.getElementById("hero-id").value;
+        
+
+        if(idXmen < xmen.length){
+            xmen.splice(idXmen-1, 1);
+        } else {
+            alert("Seulement des id de 1 à " + xmen.length);
+        }
+
+        console.table(xmen);
+        
+    }
+
+    document.getElementById("run").addEventListener("click", ()=>{
+        
+        xmensRecup();
+
+    });
 })();

@@ -10,5 +10,32 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+
+    async function xmensRecup(){
+        
+        let response = await fetch("http://localhost:3000/heroes");
+        xmen = await response.json();
+
+        xmen.forEach(element => {
+
+            document.getElementById("target").innerHTML += 
+        
+                `<li class="hero">
+                    <h4 class="title">
+                        <strong class="name">${element.name}</strong>
+                        <em class="alter-ego">${element.alterEgo}</em>
+                    </h4>
+                    <p class="powers">${element.abilities}</p>
+                </li>`
+
+        });
+
+    }
+
+    document.getElementById("run").addEventListener("click", ()=>{
+        
+        xmensRecup();
+
+    })
+
 })();

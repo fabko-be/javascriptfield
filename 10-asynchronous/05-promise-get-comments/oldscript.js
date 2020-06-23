@@ -12,21 +12,24 @@
 (() => {
     document.getElementById("run").addEventListener("click",() => {
 
-            window.lib.getPosts()
-            
-            .then ((articlesArr) => {
-
-                    articlesArr.forEach(element => {
-                        
-                    element.comments = window.lib.getComments(element.id);
+        const promPost = window.lib.getPosts();
+        
+            promPost.then((result) => {
                 
+                result.forEach(element => {
+
+                    const promCom = window.lib.getComments(element.id)
+                    
+                        element.comments = promCom;
+                        return promCom;
+                    
                 });
 
-                console.table(articlesArr);
+                console.table(result);
 
-            })
+            });
 
-            .catch((error)=>{
+            promPost.catch((error)=>{
 
                 console.log(error);
 

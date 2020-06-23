@@ -10,5 +10,10 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    document.getElementById("run").addEventListener("click", async ()=>{
+        let response = await fetch("http://localhost:3000/heroes");
+        let xmen = await response.json();
+
+        console.table(xmen);
+    })
 })();

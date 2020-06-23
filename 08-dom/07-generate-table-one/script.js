@@ -17,6 +17,5 @@
         table += "<tr><td> ligne " + i + " </td></tr>"
     };
     table += "</table>"
-
     document.getElementById("target").innerHTML = table;
 })();

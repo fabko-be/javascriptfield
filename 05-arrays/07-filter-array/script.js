@@ -93,13 +93,13 @@
         let major  = people
             .filter(item => item.age >= 18);
     // Renvoie l'array Major dans la console
-        console.log(major);
+        // console.log(major);
     // Pour aller plus loin, création d'un array secondaire dans lequel on push tous les objets de l'array précédent dans une chaine de caractère
         let alertMajor = [];
         major.forEach((test) => {
             alertMajor.push(test.firstname + " " + test.lastname + " " + test.age);
         });
     // Renvoie chaque entrée sur une ligne différente de l'array secondaire
-        alert(alertMajor.join(", \n"));
+        console.log(alertMajor.join(", \n"));
     });
 })();
