@@ -19,7 +19,7 @@
         idXmen = document.getElementById("hero-id").value;
         
 
-        if(idXmen < xmen.length){
+        if(idXmen < xmen.length && idXmen > 0){
             xmen.splice(idXmen-1, 1);
         } else {
             alert("Seulement des id de 1 à " + xmen.length);

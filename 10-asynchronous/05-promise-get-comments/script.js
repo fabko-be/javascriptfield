@@ -12,25 +12,24 @@
 (() => {
     document.getElementById("run").addEventListener("click",() => {
 
-            window.lib.getPosts()
-            
-            .then ((articlesArr) => {
+        window.lib.getPosts()
+            .then((result) => {
 
-                    articlesArr.forEach(element => {
-                        
-                    element.comments = window.lib.getComments(element.id);
-                
-                });
+                for (let insertCom of result){
 
-                console.table(articlesArr);
+                    window.lib.getComments()
 
+                    .then((comment) => {
+                        insertCom.comments = comment;
+
+                    })
+
+                };
+                console.table(result);
             })
 
-            .catch((error)=>{
-
-                console.log(error);
-
+            .catch((error)=>{console.log(error);
+            
             });
-
-        });
+    });
 })();

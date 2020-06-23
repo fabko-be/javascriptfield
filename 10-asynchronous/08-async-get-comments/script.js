@@ -11,21 +11,16 @@
 
 (() => {
 
-        async function construcArr() {
+        document.getElementById("run").addEventListener("click",async () => {
 
             let articlArr = await window.lib.getPosts();
 
-            for (let article of articlArr){
-                article.comment = await window.lib.getComments(article.id);
+            for (let element of articlArr){
+                element.comments = await window.lib.getComments();
             }
 
             console.table(articlArr);
 
-        }
-
-        document.getElementById("run").addEventListener("click",() => {
-
-            construcArr();
         });
 
 })();

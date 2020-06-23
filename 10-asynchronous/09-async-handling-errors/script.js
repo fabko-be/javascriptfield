@@ -16,7 +16,7 @@
         try {
             console.table (await window.lib.getPersons());
         } 
-        catch (e) {
+        catch(e) {
             console.log(e.message);
         }
     };

@@ -12,20 +12,9 @@
 (() => {
     document.getElementById("run").addEventListener("click", () => {
 
-        const persons = window.lib.getPersons();
-
-        persons
-        .then((result) => {
-
-            console.table(result);
+        window.lib.getPersons()
+        .then((result) => console.table(result))
+        .catch((error) => console.log(error.message))
 
         })
-
-        .catch((error) => {
-
-            console.log(error);
-
-        })
-
-    })
 })();

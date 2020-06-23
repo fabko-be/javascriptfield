@@ -12,16 +12,11 @@
 (() => {
     document.getElementById("run").addEventListener("click",() => {
 
-        const prom1 = window.lib.getPosts()
+        window.lib.getPosts()
 
-        prom1.then((result)=>{
-            console.table(result);
-        })
+        .then((result) => console.table(result))
+        .catch((error) => console.log(error.message))
 
-        prom1.catch((error)=>{
-            console.log(error);
+    });
 
-        })
-        
-    })
 })();
