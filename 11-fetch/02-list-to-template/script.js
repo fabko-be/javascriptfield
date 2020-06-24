@@ -14,14 +14,14 @@
         const response = await fetch("http://localhost:3000/heroes");
         xmen = await response.json();
 
-        const template = document.querySelector("#tpl-hero");
+        const template = await document.querySelector("#tpl-hero");
 
         xmen.forEach(element => {
             const clone = template.content.cloneNode(true);
 
             clone.querySelector(".name").innerHTML = element.name;
             clone.querySelector(".alter-ego").innerHTML = element.alterEgo;
-            clone.querySelector(".powers").innerHTML = element.abilities;
+            clone.querySelector(".powers").innerHTML = element.abilities.join(", ");
 
             document.querySelector("#target").appendChild(clone);
         });
