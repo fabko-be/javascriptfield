@@ -10,32 +10,24 @@
 // You will have time to focus on it later.
 
 (() => {
-
-    async function xmensRecup(){
-        
-        let response = await fetch("http://localhost:3000/heroes");
+    async function xmensRecup() {
+        const response = await fetch("http://localhost:3000/heroes");
         xmen = await response.json();
 
-        let template = document.querySelector("#tpl-hero");
-        
-        xmen.forEach(element => {
+        const template = document.querySelector("#tpl-hero");
 
-            let clone = template.content.cloneNode(true);
-            
+        xmen.forEach(element => {
+            const clone = template.content.cloneNode(true);
+
             clone.querySelector(".name").innerHTML = element.name;
             clone.querySelector(".alter-ego").innerHTML = element.alterEgo;
             clone.querySelector(".powers").innerHTML = element.abilities;
 
-            document.getElementById("target").appendChild(clone);
+            document.querySelector("#target").appendChild(clone);
+        });
+    }
 
-    });
-
-};
-
-    document.getElementById("run").addEventListener("click", ()=>{
-        
+    document.querySelector("#run").addEventListener("click", () => {
         xmensRecup();
-
     });
-
 })();

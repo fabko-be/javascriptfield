@@ -10,28 +10,22 @@
 // You will have time to focus on it later.
 
 (() => {
-    
-    async function xmensRecup(){
-        
-        let response = await fetch("http://localhost:3000/heroes");
+    async function xmensRecup() {
+        const response = await fetch("http://localhost:3000/heroes");
         xmen = await response.json();
 
-        idXmen = document.getElementById("hero-id").value;
-        
+        idXmen = document.querySelector("#hero-id").value;
 
-        if(idXmen < xmen.length && idXmen > 0){
-            xmen.splice(idXmen-1, 1);
+        if (idXmen < xmen.length && idXmen > 0) {
+            xmen.splice(idXmen - 1, 1);
         } else {
-            alert("Seulement des id de 1 à " + xmen.length);
+            alert(`Seulement des id de 1 à ${xmen.length}`);
         }
 
         console.table(xmen);
-        
     }
 
-    document.getElementById("run").addEventListener("click", ()=>{
-        
+    document.querySelector("#run").addEventListener("click", () => {
         xmensRecup();
-
     });
 })();
