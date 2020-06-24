@@ -16,26 +16,26 @@
         let response = await fetch("http://localhost:3000/heroes");
         xmen = await response.json();
 
-        let template = document.querySelector("#tpl-hero");
-        
         xmen.forEach(element => {
 
-            let clone = template.content.cloneNode(true);
-            
-            clone.querySelector(".name").innerHTML = element.name;
-            clone.querySelector(".alter-ego").innerHTML = element.alterEgo;
-            clone.querySelector(".powers").innerHTML = element.abilities;
+            document.getElementById("target").innerHTML += 
+        
+                `<li class="hero">
+                    <h4 class="title">
+                        <strong class="name">${element.name}</strong>
+                        <em class="alter-ego">${element.alterEgo}</em>
+                    </h4>
+                    <p class="powers">${element.abilities}</p>
+                </li>`
 
-            document.getElementById("target").appendChild(clone);
+        });
 
-    });
-
-};
+    }
 
     document.getElementById("run").addEventListener("click", ()=>{
         
         xmensRecup();
 
-    });
+    })
 
 })();

@@ -33,9 +33,9 @@
         }
 
         xmen.push(newXmen);
-
+        
         console.table(xmen);
-        }
+    }
     }
 
     document.getElementById("run").addEventListener("click", ()=>{
