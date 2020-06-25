@@ -10,26 +10,23 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.getElementById("run").addEventListener("click",() => {
+    document.querySelector("#run").addEventListener("click", () => {
+        window.lib
+            .getPosts()
+            .then(posts => {
+                for (const el of posts) {
+                    window.lib
+                        .getComments()
 
-        window.lib.getPosts()
-            .then((result) => {
-
-                for (let insertCom of result){
-
-                    window.lib.getComments()
-
-                    .then((comment) => {
-                        insertCom.comments = comment;
-
-                    })
-
-                };
+                        .then(comment => {
+                            el.comments = comment;
+                        });
+                }
                 console.table(result);
             })
 
-            .catch((error)=>{console.log(error);
-            
+            .catch(error => {
+                console.log(error);
             });
     });
 })();

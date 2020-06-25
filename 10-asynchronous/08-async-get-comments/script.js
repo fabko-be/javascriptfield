@@ -10,17 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
+    document.querySelector("#run").addEventListener("click", async () => {
+        const articlArr = await window.lib.getPosts();
 
-        document.getElementById("run").addEventListener("click",async () => {
+        for (const element of articlArr) {
+            element.comments = await window.lib.getComments();
+        }
 
-            let articlArr = await window.lib.getPosts();
-
-            for (let element of articlArr){
-                element.comments = await window.lib.getComments();
-            }
-
-            console.table(articlArr);
-
-        });
-
+        console.table(articlArr);
+    });
 })();

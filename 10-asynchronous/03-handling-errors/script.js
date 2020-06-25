@@ -10,22 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    
-    function callbackTest(error, peopleArr){
-
-        if(error != null){
-            console.log("WTF !");
+    function callbackTest(error, peopleArr) {
+        if (error != null) {
+            console.log(error.message);
         } else {
             console.table(peopleArr);
         }
-
     }
 
-    document.getElementById("run").addEventListener("click",() => {
-
+    document.querySelector("#run").addEventListener("click", () => {
         window.lib.getPersons(callbackTest);
-
-    })
-
- 
+    });
 })();

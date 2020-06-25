@@ -10,21 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-
-    async function check(){
-        
+    async function check() {
         try {
-            console.table (await window.lib.getPersons());
-        } 
-        catch(e) {
+            console.table(await window.lib.getPersons());
+        } catch (e) {
             console.log(e.message);
         }
-    };
+    }
 
-    document.getElementById("run").addEventListener("click",() => {
-
+    document.querySelector("#run").addEventListener("click", () => {
         check();
-
     });
-
 })();

@@ -10,18 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-
-    function callbackTest(error, articlesArr){
-        if(error === null){
+    function callbackTest(error, articlesArr) {
+        if (error === null) {
             console.table(articlesArr);
         } else {
             console.log("WTF");
         }
     }
-    document.getElementById("run").addEventListener("click",() => {
-
+    document.querySelector("#run").addEventListener("click", () => {
         window.lib.getPosts(callbackTest);
-        
-    })
-
+    });
 })();

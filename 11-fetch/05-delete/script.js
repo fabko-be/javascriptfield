@@ -10,22 +10,25 @@
 // You will have time to focus on it later.
 
 (() => {
-    async function xmensRecup() {
-        const response = await fetch("http://localhost:3000/heroes");
-        xmen = await response.json();
+    document.querySelector("#run").addEventListener("click", () => {
+        const id = document.querySelector("#hero-id").value;
 
-        idXmen = document.querySelector("#hero-id").value;
+        delHero();
 
-        if (idXmen < xmen.length && idXmen > 0) {
-            xmen.splice(idXmen - 1, 1);
-        } else {
-            alert(`Seulement des id de 1 à ${xmen.length}`);
+        async function delHero() {
+            const heroDel = await fetch(
+                `${"http://localhost:3000/heroes" + "/"}${id}`,
+                {
+                    method: "DELETE",
+                },
+            );
+            afterHero();
         }
 
-        console.table(xmen);
-    }
-
-    document.querySelector("#run").addEventListener("click", () => {
-        xmensRecup();
+        async function afterHero() {
+            const recupList = await fetch("http://localhost:3000/heroes");
+            const heroesList = await recupList.json();
+            console.table(await heroesList);
+        }
     });
 })();

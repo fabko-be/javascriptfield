@@ -10,66 +10,43 @@
 // You will have time to focus on it later.
 
 (() => {
+    let heroTable = [];
 
     document.querySelector("#run").addEventListener("click", async () => {
-        let heroesArr = await [getData()];
-        console.log(await getData());
-        console.log(await createXmen());
+        const checkName = document.querySelector("#hero-name").value;
+        const checkEgo = document.querySelector("#hero-alter-ego").value;
+        const checkPow = document.querySelector("#hero-powers").value;
+        if (checkName == "" || checkEgo == "" || checkPow == "") {
+            alert("All fields must be filed");
+        } else {
+            addHero();
+        }
+
+        async function createXmen() {
+            const response = await fetch("http://localhost:3000/heroes");
+            const xmen = await response.json();
+            heroTable = xmen;
+            console.table(heroTable);
+            const newXmen = {
+                id: xmen.length + 1,
+                name: checkName,
+                alterEgo: checkEgo,
+                abilities: checkPow.split(","),
+            };
+            heroTable.push(newXmen);
+            return newXmen;
+        }
+
+        async function addHero() {
+            const pushHero = await fetch("http://localhost:3000/heroes", {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(await createXmen()),
+            });
+            return pushHero;
+        }
     });
-
-    async function getData() {
-        const response = await fetch("http://localhost:3000/heroes");
-        const xmen = await response.json();
-        heroesArr = xmen;
-        return xmen;
-    }
-
-    async function createXmen() {
-        const newXmen = await {
-            id: heroesArr.lenght + 1,
-            name: document.querySelector("#hero-name").value,
-            alterEgo: document.querySelector("#hero-alter-ego").value,
-            abilities: document.querySelector("#hero-powers").value.split(","),
-        };
-        return newXmen;
-    }
-
-    //     async function getData(data){
-    //         return data;
-    //     }
-
-    //     async function sendData(){
-    //         await fetch("http://localhost:3000/heroes", {
-    //             method : "POST",
-    //             body: JSON.stringify(newXmen),
-    //             headers : {
-    //                 "content-type" : "application/json"
-    //             }
-    //         })
-    //         await ((response)=> {
-    //             try { return response.json()}
-    //             catch { return (e) => { console.error(e.message)}}
-    //         })
-    //     }
-
-    //         console.log(getData(xmen));
-    // const addName = document.querySelector("#hero-name").value;
-    // const addPowers = document.querySelector("#hero-powers").value;
-    // const alterEgo = document.querySelector("#hero-alter-ego").value;
-
-    // if (addName == "" || alterEgo == "" || addPowers == "") {
-    //     alert("All fields are required");
-    // } else {
-    //     newXmen = {
-    //         id: xmen.length + 1,
-    //         name: addName,
-    //         alterEgo,
-    //         abilities: addPowers.split(","),
-    //     };
-    //     response.send(newXmen);
-    //     xmen.push(newXmen);
-
-    //     console.table(xmen);
-    // }
-    // }
 })();

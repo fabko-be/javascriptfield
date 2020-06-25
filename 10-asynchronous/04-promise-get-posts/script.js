@@ -10,13 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    document.getElementById("run").addEventListener("click",() => {
+    document.querySelector("#run").addEventListener("click", () => {
+        window.lib
+            .getPosts()
 
-        window.lib.getPosts()
-
-        .then((result) => console.table(result))
-        .catch((error) => console.log(error.message))
-
+            .then(result => console.table(result))
+            .catch(error => console.log(error.message));
     });
-
 })();
