@@ -27,7 +27,6 @@
                 alterEgo,
                 abilities: addPowers.split(","),
             };
-            response.send(newXmen);
             xmen.push(newXmen);
 
             console.table(xmen);

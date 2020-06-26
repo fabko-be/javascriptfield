@@ -12,25 +12,23 @@
 (() => {
     async function xmensRecup() {
         const response = await fetch("http://localhost:3000/heroes");
-        xmen = await response.json();
+        const xmens = await response.json();
 
         const pickOne = document.querySelector("#hero-id").value;
-        const chosenOne = xmen[pickOne - 1];
+        const chosenOne = xmens[pickOne - 1];
 
         const template = document.querySelector("#tpl-hero");
 
-        if (pickOne <= xmen.length && pickOne > 0) {
-            // document.getElementById("target").innerHTML =
-
+        if (pickOne <= xmens.length && pickOne > 0) {
             const clone = template.content.cloneNode(true);
 
             clone.querySelector(".name").innerHTML = chosenOne.name;
             clone.querySelector(".alter-ego").innerHTML = chosenOne.alterEgo;
-            clone.querySelector(".powers").innerHTML = chosenOne.abilities;
+            clone.querySelector(".powers").innerHTML = `${chosenOne.abilities.join(", ")}.`;
 
             document.querySelector("#target").appendChild(clone);
         } else {
-            alert(`Seulement des nombres de 1 à ${xmen.length}`);
+            alert(`Seulement des nombres de 1 à ${xmens.length}`);
         }
     }
 

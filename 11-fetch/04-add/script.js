@@ -10,7 +10,6 @@
 // You will have time to focus on it later.
 
 (() => {
-    let heroTable = [];
 
     document.querySelector("#run").addEventListener("click", async () => {
         const checkName = document.querySelector("#hero-name").value;
@@ -25,15 +24,12 @@
         async function createXmen() {
             const response = await fetch("http://localhost:3000/heroes");
             const xmen = await response.json();
-            heroTable = xmen;
-            console.table(heroTable);
             const newXmen = {
                 id: xmen.length + 1,
                 name: checkName,
                 alterEgo: checkEgo,
                 abilities: checkPow.split(","),
             };
-            heroTable.push(newXmen);
             return newXmen;
         }
 
@@ -46,6 +42,9 @@
                 },
                 body: JSON.stringify(await createXmen()),
             });
+            console.table(
+                await (await fetch("http://localhost:3000/heroes")).json(),
+            );
             return pushHero;
         }
     });

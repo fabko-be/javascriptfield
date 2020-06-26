@@ -12,7 +12,7 @@
 (() => {
     async function xmensRecup() {
         const response = await fetch("http://localhost:3000/heroes");
-        xmen = await response.json();
+        const xmen = await response.json();
 
         const template = await document.querySelector("#tpl-hero");
 

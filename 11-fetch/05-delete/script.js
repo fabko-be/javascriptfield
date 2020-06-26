@@ -16,12 +16,10 @@
         delHero();
 
         async function delHero() {
-            const heroDel = await fetch(
-                `${"http://localhost:3000/heroes" + "/"}${id}`,
-                {
-                    method: "DELETE",
-                },
-            );
+            // const heroDel =
+            await fetch(`${"http://localhost:3000/heroes/"}${id}`, {
+                method: "DELETE",
+            });
             afterHero();
         }
 
